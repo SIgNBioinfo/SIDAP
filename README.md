@@ -28,7 +28,11 @@ cytof_tsne_densvm_GUI()
 
 3.Check the help pages for more information about this package and the using of the workhorse function.
               
-**NOTE**: This package is in the BETA stage of development, new features will continue to be added, please take note for changes in this package. Also this version is tested on windows only.
+**NOTE**: This package is in the BETA stage of development, new features will continue to be added, please take note for changes in this package. This BETA version is currently tested on Windows OS only. Using the GUI version of the workhorse function on Mac OS, please check to see whether the X11 windowing system (X Windows) has already been installed on your computer. For OS X 10.6 and 10.7, the file X11.app should appear in the Utilities folder under Applications in the finder. This application should always be installed under OS X 10.7. For OS X 10.8 or 10.9, the file is named XQuartz.app and is no longer included with the operating system, you need to install XQuartz yourself. install **XQuartz** from http://xquartz.macosforge.org.
+
+1. Download the disk image (dmg) file for XQuartz.
+2. When you open this file by double-clicking on it, you'll find XQuartz.pkg, double-click on it to run the installer, clicking through all the defaults.
+3. After the installer runs, you'll have to log out and back on to your Mac OS X account.
 
  
  
