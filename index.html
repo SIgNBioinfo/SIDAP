@@ -28,37 +28,47 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+          <h1>
+<a name="sidap_0993" class="anchor" href="#sidap_0993"><span class="octicon octicon-link"></span></a>sidap_0.99.3</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<h3>
+<a name="an-integrated-mass-cytometry-data-analysis-pipeline" class="anchor" href="#an-integrated-mass-cytometry-data-analysis-pipeline"><span class="octicon octicon-link"></span></a>An Integrated Mass Cytometry Data Analysis Pipeline</h3>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<hr><p>This is a BETA release of <a href="http://signbioinfo.github.io/SIDAP">SIDAP</a>, Analyse the CYTOF data by <em>simultaneous illustration of diversity and progression</em>.
+To use this package, you will need the R statistical computing environment (R (&gt;= 2.7.0)) and several dependent 
+packages (<strong>tcltk, flowCore, mclust, gplots, igraph, reshape, graphics, ggplot2, e1071, lle, vegan</strong>) available through Bioconductor.</p>
+
+<hr><h3>
+<a name="sidap-package-installation-and-running" class="anchor" href="#sidap-package-installation-and-running"><span class="octicon octicon-link"></span></a>sidap Package Installation and Running</h3>
+
+<p>1.Download this package to your local directory, then start the R session, and change the working directory to where the "sidap_0.99.3.tar.gz" is, then
+type the following commands:</p>
+
+<pre><code>install.packages("SIDAP_1.0.tar.gz", repos = NULL, type = "source")
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>2.Running this package is depended on several other R packages(listed above) which available through Bioconductor. You need to run the `SIDAP_firstRun' 
+function first before use. </p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<pre><code>library(sidap)
+SIDAP_firstRun()
+</code></pre>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>Otherwise, if you don't want to bother with that, <strong>sidap</strong> provides a user friendly GUI for the workhorse function <code>cytof_tsne_densvm</code> in this package.</p>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<pre><code>library(sidap)
+cytof_tsne_densvm_GUI()
+</code></pre>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>3.Check the help pages for more information about this package and the using of the workhorse function.</p>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<p><strong>NOTE</strong>: This package is in the BETA stage of development, new features will continue to be added, please take note for changes in this package. This BETA version is currently tested on Windows OS only. Using the GUI version of the workhorse function on Mac OS, please check to see whether the X11 windowing system (X Windows) has already been installed on your computer. For OS X 10.6 and 10.7, the file X11.app should appear in the Utilities folder under Applications in the finder. This application should always be installed under OS X 10.7. For OS X 10.8 or 10.9, the file is named XQuartz.app and is no longer included with the operating system, you need to install XQuartz yourself. Install <strong>XQuartz</strong> from <a href="http://xquartz.macosforge.org">http://xquartz.macosforge.org</a>.</p>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<ol>
+<li>Download the disk image (dmg) file for XQuartz.</li>
+<li>When you open this file by double-clicking on it, you'll find XQuartz.pkg, double-click on it to run the installer, clicking through all the defaults.</li>
+<li>After the installer runs, you'll have to log out and back on to your Mac OS X account.</li>
+</ol>
         </section>
 
         <aside id="sidebar">
