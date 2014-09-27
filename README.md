@@ -3,9 +3,9 @@ sidap_0.99.3
 
 ###An Integrated Mass Cytometry Data Analysis Pipeline
 -----------------------------------------
-This is a BETA release of SIDAP, Analyse the CYTOF data by simultaneous illustration of diversity and progression.
+This is a BETA release of [SIDAP](http://signbioinfo.github.io/SIDAP), Analyse the CYTOF data by *simultaneous illustration of diversity and progression*.
 To use this package, you will need the R statistical computing environment (R (>= 2.7.0)) and several dependent 
-packages (tcltk, flowCore, mclust, gplots, igraph, reshape, graphics, ggplot2, e1071, lle, vegan) available through Bioconductor.
+packages (**tcltk, flowCore, mclust, gplots, igraph, reshape, graphics, ggplot2, e1071, lle, vegan**) available through Bioconductor.
 
 ------------------------------------------------
 ### sidap Package Installation and Running
