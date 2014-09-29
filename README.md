@@ -1,4 +1,4 @@
-sidap_0.99.3
+sidap_0.99.4
 =================
 
 ###An Integrated Mass Cytometry Data Analysis Pipeline
@@ -12,10 +12,10 @@ packages (**tcltk, flowCore, mclust, gplots, igraph, reshape, graphics, ggplot2,
 1.Download this package to your local directory, then start the R session, and change the working directory to where the "sidap_0.99.3.tar.gz" is, then
 type the following commands:
 ```
-install.packages("sidap_0.99.3.tar.gz", repos = NULL, type = "source")
+install.packages("sidap_0.99.4.tar.gz", repos = NULL, type = "source")
 ```  
 2.Running this package is depended on several other R packages(listed above) which available through Bioconductor. Running the workhorse function `cytof_tsne_densvm`
-will check if the dependent packages are available, and will ask for user's permission before installing these dependent packages.
+will firstly help check if the dependent packages are available, and will ask for user's permission before installing these dependent packages.
 ```
 library(sidap)
 ?cytof_tsne_densvm   # read the help page for this function
