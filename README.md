@@ -12,7 +12,7 @@ packages (**tcltk, flowCore, mclust, gplots, igraph, reshape, graphics, ggplot2,
 1.Download this package to your local directory, then start the R session, and change the working directory to where the "sidap_0.99.3.tar.gz" is, then
 type the following commands:
 ```
-install.packages("SIDAP_1.0.tar.gz", repos = NULL, type = "source")
+install.packages("SIDAP_0.99.3.tar.gz", repos = NULL, type = "source")
 ```  
 2.Running this package is depended on several other R packages(listed above) which available through Bioconductor. You need to run the `SIDAP_firstRun' 
 function first before use. 
