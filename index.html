@@ -1,35 +1,43 @@
 <!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>SIDAP by SIgNBioinfo</title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>SIDAP</h1>
-        <p>An Integrated Mass Cytometry Data Analysis Pipeline</p>
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
 
-        <p class="view"><a href="https://github.com/SIgNBioinfo/SIDAP">View the Project on GitHub <small>SIgNBioinfo/SIDAP</small></a></p>
+  <title>SIDAP</title>
+  <meta name="description" content="An Integrated Mass Cytometry Data Analysis Pipeline">
 
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-        <ul>
-          <li><a href="https://github.com/SIgNBioinfo/SIDAP/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/SIgNBioinfo/SIDAP/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/SIgNBioinfo/SIDAP">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
-<a name="sidap_0993" class="anchor" href="#sidap_0993"><span class="octicon octicon-link"></span></a>sidap_0.99.3</h1>
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">SIDAP</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">An Integrated Mass Cytometry Data Analysis Pipeline</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/SIgNBioinfo/SIDAP/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/SIgNBioinfo/SIDAP/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/SIgNBioinfo/SIDAP" class="code">View SIDAP on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h1>
+<a name="sidap_0994" class="anchor" href="#sidap_0994"><span class="octicon octicon-link"></span></a>sidap_0.99.4</h1>
 
 <h3>
 <a name="an-integrated-mass-cytometry-data-analysis-pipeline" class="anchor" href="#an-integrated-mass-cytometry-data-analysis-pipeline"><span class="octicon octicon-link"></span></a>An Integrated Mass Cytometry Data Analysis Pipeline</h3>
@@ -44,17 +52,18 @@ packages (<strong>tcltk, flowCore, mclust, gplots, igraph, reshape, graphics, gg
 <p>1.Download this package to your local directory, then start the R session, and change the working directory to where the "sidap_0.99.3.tar.gz" is, then
 type the following commands:</p>
 
-<pre><code>install.packages("sidap_0.99.3.tar.gz", repos = NULL, type = "source")
+<pre><code>install.packages("sidap_0.99.4.tar.gz", repos = NULL, type = "source")
 </code></pre>
 
-<p>2.Running this package is depended on several other R packages(listed above) which available through Bioconductor. You need to run the `SIDAP_firstRun' 
-function first before use. </p>
+<p>2.Running this package is depended on several other R packages(listed above) which available through Bioconductor. Running the workhorse function <code>cytof_tsne_densvm</code>
+will firstly help check if the dependent packages are available, and will ask for user's permission before installing these dependent packages.</p>
 
 <pre><code>library(sidap)
-SIDAP_firstRun()
+?cytof_tsne_densvm   # read the help page for this function
+cytof_tsne_densvm()  # input your parameters
 </code></pre>
 
-<p>Otherwise, if you don't want to bother with that, <strong>sidap</strong> provides a user friendly GUI for the workhorse function <code>cytof_tsne_densvm</code> in this package.</p>
+<p>Otherwise, if you are not comfortable with command, <strong>sidap</strong> provides a user friendly GUI for the workhorse function <code>cytof_tsne_densvm</code> in this package.</p>
 
 <pre><code>library(sidap)
 cytof_tsne_densvm_GUI()
@@ -62,20 +71,33 @@ cytof_tsne_densvm_GUI()
 
 <p>3.Check the help pages for more information about this package and the using of the workhorse function.</p>
 
-<p><strong>NOTE</strong>: This package is in the BETA stage of development, it has been password protected awaiting publication, but will be released as soon as published. New features will continue to be added, please take note for changes in this package. This BETA version is currently tested on Windows OS only. Using the GUI version of the workhorse function on Mac OS, please check to see whether the X11 windowing system (X Windows) has already been installed on your computer. For OS X 10.6 and 10.7, the file X11.app should appear in the Utilities folder under Applications in the finder. This application should always be installed under OS X 10.7. For OS X 10.8 or 10.9, the file is named XQuartz.app and is no longer included with the operating system, you need to install XQuartz yourself. Install <strong>XQuartz</strong> from <a href="http://xquartz.macosforge.org">http://xquartz.macosforge.org</a>.</p>
+<p><strong>NOTE</strong>: This package is in the BETA stage of development, it has been password protected awaiting publication, but will be released as soon as published. New features will continue to be added, please take note for changes in this package. This BETA version is tested on Windows and Mac OS. Using the GUI version of the workhorse function on Mac OS, please check to see whether the X11 windowing system (X Windows) has already been installed on your computer. For OS X 10.6 and 10.7, the file X11.app should appear in the Utilities folder under Applications in the finder. This application should always be installed under OS X 10.7. For OS X 10.8 or 10.9, the file is named XQuartz.app and is no longer included with the operating system, you need to install XQuartz yourself. Install <strong>XQuartz</strong> from <a href="http://xquartz.macosforge.org">http://xquartz.macosforge.org</a>.</p>
 
 <ol>
 <li>Download the disk image (dmg) file for XQuartz.</li>
 <li>When you open this file by double-clicking on it, you'll find XQuartz.pkg, double-click on it to run the installer, clicking through all the defaults.</li>
 <li>After the installer runs, you'll have to log out and back on to your Mac OS X account.</li>
 </ol>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/SIgNBioinfo">SIgNBioinfo</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+        </article>
+      </div>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/SIgNBioinfo" class="avatar"><img src="https://avatars0.githubusercontent.com/u/8912714?v=2&amp;s=60" width="48" height="48"></a> <a href="https://github.com/SIgNBioinfo">SIgNBioinfo</a> maintains <a href="https://github.com/SIgNBioinfo/SIDAP">SIDAP</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="http://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/SIgNBioinfo/SIDAP/tarball/master" class="tar">tar</a><a href="https://github.com/SIgNBioinfo/SIDAP/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
 </html>
