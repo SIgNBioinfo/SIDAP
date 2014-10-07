@@ -21,11 +21,14 @@ packages (**tcltk, flowCore, mclust, gplots, igraph, reshape, graphics, ggplot2,
 2. package installation
 
     * 2.1 Download this package to your local directory, then start the R session, and change the working directory to where the `sidap_0.99.5.tar.gz` is. Since this package had not been submitted to any public archive, so you need to check if you have installed all the dependented package listed above. For this checking, you can download the `sidap_firstRun.R` function for auto checking and installation.
+    
         ```
         source(sidap_firstRun.R)
         sidap_firstRun()
         ```
+        
         then install the package with following commands:
+        
         ```
         install.packages("sidap_0.99.5.tar.gz", repos = NULL, type = "source")
         ```  
