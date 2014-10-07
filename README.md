@@ -29,11 +29,10 @@ sidap_firstRun()
 ```
 install.packages("sidap_0.99.4.tar.gz", repos = NULL, type = "source")
 ```  
-    * 2.2 check the notes in **sidap_0.99.4** for package runing    
+    * 2.2 check the notes in __sidap_0.99.4__ for package runing    
     
 
-
-**sidap_0.99.4** Package Installation and Running
+**sidap_0.99.4** 
 ------------------------------------------------
 1.Download this package to your local directory, then start the R session, and change the working directory to where the "sidap_0.99.3.tar.gz" is, then
 type the following commands:
