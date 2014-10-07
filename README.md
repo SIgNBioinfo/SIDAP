@@ -1,14 +1,40 @@
-sidap_0.99.4
+SIDAP
 =================
 
-###An Integrated Mass Cytometry Data Analysis Pipeline
------------------------------------------
+An Integrated Mass Cytometry Data Analysis Pipeline
+-------------------------------------------------------
 This is a BETA release of [SIDAP](http://signbioinfo.github.io/SIDAP), Analyse the CYTOF data by *simultaneous illustration of diversity and progression*.
 To use this package, you will need the R statistical computing environment (R (>= 2.7.0)) and several dependent 
 packages (**tcltk, flowCore, mclust, gplots, igraph, reshape, graphics, ggplot2, e1071, lle, vegan**) available through Bioconductor.
 
+
+**sidap_0.99.5** 
+--------------------
+1. package updates:
+    + added the prefix(baseName) to all output files
+    + added `Roxygen` documentions to the export functions 
+    + removed inside package attach, like `library()` or `require()`
+    + orginized the dependent packages to the `NAMESPACE`
+    + added the cluster plot for whole fcs data and grid cluster plot for each fcs file
+    + fixed several minor bugs 
+    
+2. package installation
+
+    * 2.1 Download this package to your local directory, then start the R session, and change the working directory to where the `sidap_0.99.3.tar.gz` is. Since this package had not been submitted to any public archive, so you need to check if you have installed all the dependented package listed above. For this checking, you can download the `sidap_firstRun.R` function for auto checking and installation.
+```
+source(sidap_firstRun.R)
+sidap_firstRun()
+```
+    then install the package with following commands:
+```
+install.packages("sidap_0.99.4.tar.gz", repos = NULL, type = "source")
+```  
+    * 2.2 check the notes in **sidap_0.99.4** for package runing    
+    
+
+
+**sidap_0.99.4** Package Installation and Running
 ------------------------------------------------
-###Package Installation and Running
 1.Download this package to your local directory, then start the R session, and change the working directory to where the "sidap_0.99.3.tar.gz" is, then
 type the following commands:
 ```
