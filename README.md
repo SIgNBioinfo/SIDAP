@@ -3,9 +3,7 @@ SIDAP
 
 An Integrated Mass Cytometry Data Analysis Pipeline
 -------------------------------------------------------
-This is a BETA release of [SIDAP](http://signbioinfo.github.io/SIDAP), Analyse the CYTOF data by *simultaneous illustration of diversity and progression*.
-To use this package, you will need the R statistical computing environment (R (>= 2.7.0)) and several dependent 
-packages (**tcltk, flowCore, mclust, gplots, igraph, reshape, graphics, ggplot2, e1071, lle, vegan**) available through Bioconductor.
+This is a BETA release of [SIDAP](http://signbioinfo.github.io/SIDAP), Analyse the CYTOF data by *simultaneous illustration of diversity and progression*. To use this package, you will need the R statistical computing environment (R (>= 2.7.0)) and several dependent packages (**tcltk, flowCore, mclust, gplots, igraph, reshape, graphics, ggplot2, e1071, lle, vegan**) available through Bioconductor. 
 
 
 **sidap_0.99.5** 
@@ -20,7 +18,7 @@ packages (**tcltk, flowCore, mclust, gplots, igraph, reshape, graphics, ggplot2,
     
 2. package installation
 
-    * 2.1 Download this package to your local directory, then start the R session, and change the working directory to where the `sidap_0.99.5.tar.gz` is. Since this package had not been submitted to any public archive, so you need to check if you have installed all the dependented package listed above. For this checking, you can download the `sidap_firstRun.R` function for auto checking and installation.
+    * 2.1 Download this package to your local directory, then start the R session, and change the working directory to where the `sidap_0.99.5.tar.gz` is. Since this package has not been submitted to any public archive, you need to check if you have installed all the dependent packages listed above. For this checking, you can download the `sidap_firstRun.R` function for auto checking and installation.
     
         ```
         source(sidap_firstRun.R)
