@@ -37,6 +37,47 @@
 <p>This is a BETA release of <a href="http://signbioinfo.github.io/SIDAP">SIDAP</a>, Analyse the CYTOF data by <em>simultaneous illustration of diversity and progression</em>. To use this package, you will need the R statistical computing environment (R (&gt;= 2.7.0)) and several dependent packages (<strong>tcltk, flowCore, mclust, gplots, igraph, reshape, graphics, ggplot2, e1071, lle, vegan</strong>) available through Bioconductor. </p>
 
 <h2>
+<a name="sidap_0996" class="anchor" href="#sidap_0996"><span class="octicon octicon-link"></span></a><strong>sidap_0.99.6</strong>
+</h2>
+
+<ol>
+<li>
+<p>package updates:</p>
+
+<ul>
+<li>adjusted graph to fit for multiple samples (<em>auto adjust</em>) </li>
+<li>build the vignette (<em>SIDAP analysis workflow</em>) </li>
+<li>fixed several minor bugs in GUI</li>
+</ul>
+</li>
+<li>
+<p>package installation</p>
+
+<ul>
+<li>
+<p>2.1 Download this package to your local directory, then start the R session, and change the working directory to where the <code>sidap_0.99.6.tar.gz</code> is. Since this package has not been submitted to any public archive, you need to check if you have installed all the dependent packages listed above. For this checking, you can download the <code>sidap_firstRun.R</code> function for auto checking and installation.</p>
+
+<pre><code>source(sidap_firstRun.R)
+sidap_firstRun()
+</code></pre>
+
+<p>then install the package with following commands:</p>
+
+<pre><code>install.packages("sidap_0.99.6.tar.gz", repos = NULL, type = "source")
+</code></pre>
+</li>
+<li>
+<p>2.2 broser the vignette</p>
+
+<pre><code>browseVignettes(package = "sidap")
+</code></pre>
+</li>
+<li><p>2.3 check the notes in <strong>sidap_0.99.4</strong> for package runing    </p></li>
+</ul>
+</li>
+</ol>
+
+<h2>
 <a name="sidap_0995-" class="anchor" href="#sidap_0995-"><span class="octicon octicon-link"></span></a>
 <strong>sidap_0.99.5</strong> </h2>
 
@@ -75,7 +116,9 @@ sidap_firstRun()
 </li>
 </ul>
 </li>
-</ol><h2>
+</ol>
+
+<h2>
 <a name="sidap_0994-" class="anchor" href="#sidap_0994-"><span class="octicon octicon-link"></span></a>
 <strong>sidap_0.99.4</strong> </h2>
 
