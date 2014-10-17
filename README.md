@@ -26,7 +26,7 @@ This is a BETA release of [SIDAP](http://signbioinfo.github.io/SIDAP), Analyse t
         ```
         install.packages("sidap_0.99.6.tar.gz", repos = NULL, type = "source")
         ```  
-    * 2.2 broser the vignette
+    * 2.2 browse the vignette
     
         ```
         browseVignettes(package = "sidap")
