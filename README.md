@@ -9,7 +9,10 @@ This is a BETA release of [SIDAP](http://signbioinfo.github.io/SIDAP), Analyse t
 --------------------
 1. package updates:
     + adjusted graph to fit for multiple samples (*auto adjust*) 
-    + build the vignette (*SIDAP analysis workflow*) 
+	+ adjusted the shape(sample) and colour(cluster) palette for sample size bigger than 4 and clusters more than 10
+	+ adjusted the heatmap plot(legend, label, title) to auto fit for saving into PDF
+	+ auto check and report the odd markers which are not shown in the FCS files
+    + added the vignette (*SIDAP analysis workflow*) 
     + fixed several minor bugs in GUI
 
 2. package installation
@@ -38,9 +41,10 @@ This is a BETA release of [SIDAP](http://signbioinfo.github.io/SIDAP), Analyse t
 --------------------
 1. package updates:
     + added the prefix(baseName) to all output files
-    + added `Roxygen` documentions to the export functions 
+	+ reorganize the codes for easier maintenance
+    + added `Roxygen` documentation to the export functions 
     + removed inside package attach, like `library()` or `require()`
-    + orginized the dependent packages to the `NAMESPACE`
+    + organized the dependent packages to the `NAMESPACE`
     + added the cluster plot for whole fcs data and grid cluster plot for each fcs file
     + fixed several minor bugs 
     
@@ -58,7 +62,7 @@ This is a BETA release of [SIDAP](http://signbioinfo.github.io/SIDAP), Analyse t
         ```
         install.packages("sidap_0.99.5.tar.gz", repos = NULL, type = "source")
         ```  
-    * 2.2 check the notes in __sidap_0.99.4__ for package runing    
+    * 2.2 check the notes in __sidap_0.99.4__ for package running    
     
 
 **sidap_0.99.4** 
