@@ -20,7 +20,49 @@ This is a BETA release of [SIDAP](http://signbioinfo.github.io/SIDAP), Analyse t
     * 2.1 Download this package to your local directory, then start the R session, and change the working directory to where the `sidap_0.99.6.tar.gz` is. Since this package has not been submitted to any public archive, you need to check if you have installed all the dependent packages listed above. For this checking, you can download the `sidap_firstRun.R` function for auto checking and installation.
     
         ```
-        source(sidap_firstRun.R)
+        ## copy thses codes to the console to install the dependent packages 
+        SIDAP_firstRun <- function() {
+        
+        if (!require(tcltk, quietly = TRUE)) {
+            install.packages("tcltk") 
+        }
+        if (!require(flowCore)) {
+            source("http://bioconductor.org/biocLite.R")
+            biocLite("flowCore", ask = FALSE)
+        }
+        if (!require(mclust)) {
+            source("http://bioconductor.org/biocLite.R")
+            biocLite("mclust", ask = FALSE)
+        }
+        if (!require(gplots)) {
+            source("http://bioconductor.org/biocLite.R")
+            biocLite("gplots", ask = FALSE)
+        }
+        if (!require(reshape)) {
+            source("http://bioconductor.org/biocLite.R")
+            biocLite("reshape", ask = FALSE)
+        }
+        if (!require(graphics)) {
+            source("http://bioconductor.org/biocLite.R")
+            biocLite("graphics", ask = FALSE)
+        }
+        if (!require(ggplot2)) {
+            source("http://bioconductor.org/biocLite.R")
+            biocLite("ggplot2", ask = FALSE)
+        }
+        if (!require(e1071)) {
+            source("http://bioconductor.org/biocLite.R")
+            biocLite("e1071", ask = FALSE)
+        }
+        if (!require(lle)) {
+            source("http://bioconductor.org/biocLite.R")
+            biocLite("lle", ask = FALSE)
+        }
+        if (!require(vegan)) {
+            source("http://bioconductor.org/biocLite.R")
+            biocLite("vegan", ask = FALSE)
+        }
+        }
         sidap_firstRun()
         ```
         
@@ -35,8 +77,23 @@ This is a BETA release of [SIDAP](http://signbioinfo.github.io/SIDAP), Analyse t
         browseVignettes(package = "sidap")
         ```
     
-    * 2.3 check the notes in __sidap_0.99.4__ for package runing    
-    
+    * 2.3 Running the workhorse function `cytof_tsne_densvm` 
+        ```
+        library(sidap)
+        ?cytof_tsne_densvm   # read the help page for this function
+        cytof_tsne_densvm()  # input your parameters
+        ```
+        Otherwise, if you are not comfortable with command, **sidap** provides a        user friendly GUI for the workhorse function `cytof_tsne_densvm` in this package.
+        
+        ```
+        library(sidap)
+        cytof_tsne_densvm_GUI()
+        ```
+Check the vignettee and help pages for more information about this package and the using of the workhorse function.
+
+        ```
+        browseVignettes(package = "sidap")
+        ```   
 **sidap_0.99.5** 
 --------------------
 1. package updates:
