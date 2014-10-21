@@ -25,6 +25,9 @@ This is a BETA release of [SIDAP](http://signbioinfo.github.io/SIDAP), Analyse t
             if (!require(tcltk, quietly = TRUE)) {
                 install.packages("tcltk") 
             }
+			if (!require(Rtsne, quietly = TRUE)) {
+				install.packages("Rtsne")
+			}
             if (!require(flowCore)) {
                 source("http://bioconductor.org/biocLite.R")
                 biocLite("flowCore", ask = FALSE)
