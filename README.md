@@ -21,7 +21,7 @@ This is a BETA release of [SIDAP](http://signbioinfo.github.io/SIDAP), Analyse t
     
         ```
         ## copy these codes to the console to install the dependent packages 
-        SIDAP_firstRun <- function() {
+        sidap_firstRun <- function() {
             if (!require(tcltk, quietly = TRUE)) {
                 install.packages("tcltk") 
             }
