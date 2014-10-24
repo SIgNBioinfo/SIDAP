@@ -1,34 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>SIDAP by SIgNBioinfo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <title>SIDAP by SIgNBioinfo</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
+    <header>
+      <div class="inner">
         <h1>SIDAP</h1>
-        <p>An Integrated Mass Cytometry Data Analysis Pipeline</p>
+        <h2>An Integrated Mass Cytometry Data Analysis Pipeline</h2>
+        <a href="https://github.com/SIgNBioinfo/SIDAP" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
 
-        <p class="view"><a href="https://github.com/SIgNBioinfo/SIDAP">View the Project on GitHub <small>SIgNBioinfo/SIDAP</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/SIgNBioinfo/SIDAP/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/SIgNBioinfo/SIDAP/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/SIgNBioinfo/SIDAP">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
 <a name="sidap" class="anchor" href="#sidap"><span class="octicon octicon-link"></span></a>SIDAP</h1>
 
 <h2>
@@ -46,7 +46,10 @@
 
 <ul>
 <li>adjusted graph to fit for multiple samples (<em>auto adjust</em>) </li>
-<li>build the vignette (<em>SIDAP analysis workflow</em>) </li>
+<li>adjusted the shape(sample) and colour(cluster) palette for sample size bigger than 4 and clusters more than 10</li>
+<li>adjusted the heatmap plot(legend, label, title) to auto fit for saving into PDF</li>
+<li>auto check and report the odd markers which are not shown in the FCS files</li>
+<li>added the vignette (<em>SIDAP analysis workflow</em>) </li>
 <li>fixed several minor bugs in GUI</li>
 </ul>
 </li>
@@ -57,7 +60,52 @@
 <li>
 <p>2.1 Download this package to your local directory, then start the R session, and change the working directory to where the <code>sidap_0.99.6.tar.gz</code> is. Since this package has not been submitted to any public archive, you need to check if you have installed all the dependent packages listed above. For this checking, you can download the <code>sidap_firstRun.R</code> function for auto checking and installation.</p>
 
-<pre><code>source(sidap_firstRun.R)
+<pre><code>## copy these codes to the console to install the dependent packages 
+sidap_firstRun &lt;- function() {
+    if (!require(tcltk, quietly = TRUE)) {
+        install.packages("tcltk") 
+    }
+    if (!require(Rtsne, quietly = TRUE)) {
+        install.packages("Rtsne")
+    }
+    if (!require(flowCore)) {
+        source("http://bioconductor.org/biocLite.R")
+        biocLite("flowCore", ask = FALSE)
+    }
+    if (!require(mclust)) {
+        source("http://bioconductor.org/biocLite.R")
+        biocLite("mclust", ask = FALSE)
+    }
+    if (!require(gplots)) {
+        source("http://bioconductor.org/biocLite.R")
+        biocLite("gplots", ask = FALSE)
+    }
+    if (!require(reshape)) {
+        source("http://bioconductor.org/biocLite.R")
+        biocLite("reshape", ask = FALSE)
+    }
+    if (!require(graphics)) {
+        source("http://bioconductor.org/biocLite.R")
+        biocLite("graphics", ask = FALSE)
+    }
+    if (!require(ggplot2)) {
+        source("http://bioconductor.org/biocLite.R")
+        biocLite("ggplot2", ask = FALSE)
+    }
+    if (!require(e1071)) {
+        source("http://bioconductor.org/biocLite.R")
+        biocLite("e1071", ask = FALSE)
+    }
+    if (!require(lle)) {
+        source("http://bioconductor.org/biocLite.R")
+        biocLite("lle", ask = FALSE)
+    }
+    if (!require(vegan)) {
+        source("http://bioconductor.org/biocLite.R")
+        biocLite("vegan", ask = FALSE)
+    }
+}
+
 sidap_firstRun()
 </code></pre>
 
@@ -67,12 +115,27 @@ sidap_firstRun()
 </code></pre>
 </li>
 <li>
-<p>2.2 broser the vignette</p>
+<p>2.2 browse the vignette</p>
 
 <pre><code>browseVignettes(package = "sidap")
 </code></pre>
 </li>
-<li><p>2.3 check the notes in <strong>sidap_0.99.4</strong> for package runing    </p></li>
+<li>
+<p>2.3 Running the workhorse function <code>cytof_tsne_densvm</code> </p>
+
+<pre><code>library(sidap)
+?cytof_tsne_densvm   # read the help page for this function
+cytof_tsne_densvm()  # input your parameters
+</code></pre>
+
+<p>Otherwise, if you are not comfortable with command, <strong>sidap</strong> provides a        user friendly GUI for the workhorse function <code>cytof_tsne_densvm</code> in this package.</p>
+
+<pre><code>library(sidap)
+cytof_tsne_densvm_GUI()
+</code></pre>
+
+<p>Check the vignettee and help pages for more information about this package and the using of the workhorse function.</p>
+</li>
 </ul>
 </li>
 </ol>
@@ -87,10 +150,11 @@ sidap_firstRun()
 
 <ul>
 <li>added the prefix(baseName) to all output files</li>
-<li>added <code>Roxygen</code> documentions to the export functions </li>
+<li>reorganize the codes for easier maintenance</li>
+<li>added <code>Roxygen</code> documentation to the export functions </li>
 <li>removed inside package attach, like <code>library()</code> or <code>require()</code>
 </li>
-<li>orginized the dependent packages to the <code>NAMESPACE</code>
+<li>organized the dependent packages to the <code>NAMESPACE</code>
 </li>
 <li>added the cluster plot for whole fcs data and grid cluster plot for each fcs file</li>
 <li>fixed several minor bugs </li>
@@ -112,7 +176,7 @@ sidap_firstRun()
 <pre><code>install.packages("sidap_0.99.5.tar.gz", repos = NULL, type = "source")
 </code></pre>
 </li>
-<li>2.2 check the notes in <strong>sidap_0.99.4</strong> for package runing<br>
+<li>2.2 check the notes in <strong>sidap_0.99.4</strong> for package running<br>
 </li>
 </ul>
 </li>
@@ -151,13 +215,25 @@ cytof_tsne_densvm_GUI()
 <li>When you open this file by double-clicking on it, you'll find XQuartz.pkg, double-click on it to run the installer, clicking through all the defaults.</li>
 <li>After the installer runs, you'll have to log out and back on to your Mac OS X account.</li>
 </ol>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/SIgNBioinfo">SIgNBioinfo</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/SIgNBioinfo/SIDAP/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/SIgNBioinfo/SIDAP/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/SIgNBioinfo/SIDAP"></a> is maintained by <a href="https://github.com/SIgNBioinfo">SIgNBioinfo</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+
+  
   </body>
 </html>
