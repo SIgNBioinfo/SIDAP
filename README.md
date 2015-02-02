@@ -5,6 +5,31 @@ An Integrated Mass Cytometry Data Analysis Pipeline
 -------------------------------------------------------
 This is a BETA release of [SIDAP](http://signbioinfo.github.io/SIDAP), Analyse the CYTOF data by *simultaneous illustration of diversity and progression*. To use this package, you will need the R statistical computing environment (R (>= 2.7.0)) and several dependent packages (**tcltk, flowCore, mclust, gplots, igraph, reshape, graphics, ggplot2, e1071, lle, vegan**) available through Bioconductor. 
 
+**sidap_0.99.9**
+--------------------
+
+SIDAP package was accepted by bioconductor, new version sidap_0.99.9 was uploaded for release on bioconductor. [SIDAP devel-version URL](http://www.bioconductor.org/packages/devel/bioc/html/sidap.html). You can download the package tarball or compiled file, install it locally. But you need to install the dependent packages manually. In order to use the devel version of Bioconductor (Bioconductor 3.1), you must install R-devel, available from:
+
+  + Source ftp://ftp.stat.math.ethz.ch/Software/R/
+  + Mac http://r.research.att.com/
+  + Windows http://cran.r-project.org/bin/windows/base/rdevel.html
+
+Then, in R-devel, do the following:
+
+``` 
+    source("http://bioconductor.org/biocLite.R")
+    ##Install the package
+    biocLite("sidap")
+
+```
+Package Updates:
+  + a new vignette was added to the package, SIDAP: run with an example. Explaining how to use the package with a demo
+  + functions are split into smaller ones, help page with runnable examples are added
+  + a package help page was added to help users get oriented right away. and user can link to other functions from this page
+  + modified the marker matching function, change perl matching method for exact matching, no fuzz match
+  + added scaleMethod option for the heatmap plotting 
+  
+
 **sidap_0.99.6**
 --------------------
 1. package updates:
