@@ -3,41 +3,73 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 
     <title>SIDAP by SIgNBioinfo</title>
   </head>
 
   <body>
+
     <header>
-      <div class="inner">
+      <div class="container">
         <h1>SIDAP</h1>
         <h2>An Integrated Mass Cytometry Data Analysis Pipeline</h2>
-        <a href="https://github.com/SIgNBioinfo/SIDAP" class="button"><small>View project on</small> GitHub</a>
+
+        <section id="downloads">
+          <a href="https://github.com/SIgNBioinfo/SIDAP/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/SIgNBioinfo/SIDAP/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/SIgNBioinfo/SIDAP" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
       </div>
     </header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h1>
-<a name="sidap" class="anchor" href="#sidap"><span class="octicon octicon-link"></span></a>SIDAP</h1>
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="sidap" class="anchor" href="#sidap" aria-hidden="true"><span class="octicon octicon-link"></span></a>SIDAP</h1>
 
 <h2>
-<a name="an-integrated-mass-cytometry-data-analysis-pipeline" class="anchor" href="#an-integrated-mass-cytometry-data-analysis-pipeline"><span class="octicon octicon-link"></span></a>An Integrated Mass Cytometry Data Analysis Pipeline</h2>
+<a id="an-integrated-mass-cytometry-data-analysis-pipeline" class="anchor" href="#an-integrated-mass-cytometry-data-analysis-pipeline" aria-hidden="true"><span class="octicon octicon-link"></span></a>An Integrated Mass Cytometry Data Analysis Pipeline</h2>
 
 <p>This is a BETA release of <a href="http://signbioinfo.github.io/SIDAP">SIDAP</a>, Analyse the CYTOF data by <em>simultaneous illustration of diversity and progression</em>. To use this package, you will need the R statistical computing environment (R (&gt;= 2.7.0)) and several dependent packages (<strong>tcltk, flowCore, mclust, gplots, igraph, reshape, graphics, ggplot2, e1071, lle, vegan</strong>) available through Bioconductor. </p>
 
 <h2>
-<a name="sidap_0996" class="anchor" href="#sidap_0996"><span class="octicon octicon-link"></span></a><strong>sidap_0.99.6</strong>
+<a id="sidap_0999" class="anchor" href="#sidap_0999" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>sidap_0.99.9</strong>
+</h2>
+
+<p>SIDAP package was accepted by bioconductor, new version sidap_0.99.9 was uploaded for release on bioconductor. <a href="http://www.bioconductor.org/packages/devel/bioc/html/sidap.html">SIDAP devel-version URL</a>. You can download the package tarball or compiled file, install it locally. But you need to install the dependent packages manually. In order to use the devel version of Bioconductor (Bioconductor 3.1), you must install R-devel, available from:</p>
+
+<ul>
+<li>Source ftp://ftp.stat.math.ethz.ch/Software/R/</li>
+<li>Mac <a href="http://r.research.att.com/">http://r.research.att.com/</a>
+</li>
+<li>Windows <a href="http://cran.r-project.org/bin/windows/base/rdevel.html">http://cran.r-project.org/bin/windows/base/rdevel.html</a>
+</li>
+</ul>
+
+<p>Then, in R-devel, do the following:</p>
+
+<pre><code>    source("http://bioconductor.org/biocLite.R")
+    ##Install the package
+    biocLite("sidap")
+
+</code></pre>
+
+<p>Package Updates:</p>
+
+<ul>
+<li>a new vignette was added to the package, SIDAP: run with an example. Explaining how to use the package with a demo</li>
+<li>functions are split into smaller ones, help page with runnable examples are added</li>
+<li>a package help page was added to help users get oriented right away. and user can link to other functions from this page</li>
+<li>modified the marker matching function, change perl matching method for exact matching, no fuzz match</li>
+<li>added scaleMethod option for the heatmap plotting </li>
+</ul>
+
+<h2>
+<a id="sidap_0996" class="anchor" href="#sidap_0996" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>sidap_0.99.6</strong>
 </h2>
 
 <ol>
@@ -141,7 +173,7 @@ cytof_tsne_densvm_GUI()
 </ol>
 
 <h2>
-<a name="sidap_0995-" class="anchor" href="#sidap_0995-"><span class="octicon octicon-link"></span></a>
+<a id="sidap_0995-" class="anchor" href="#sidap_0995-" aria-hidden="true"><span class="octicon octicon-link"></span></a>
 <strong>sidap_0.99.5</strong> </h2>
 
 <ol>
@@ -183,7 +215,7 @@ sidap_firstRun()
 </ol>
 
 <h2>
-<a name="sidap_0994-" class="anchor" href="#sidap_0994-"><span class="octicon octicon-link"></span></a>
+<a id="sidap_0994-" class="anchor" href="#sidap_0994-" aria-hidden="true"><span class="octicon octicon-link"></span></a>
 <strong>sidap_0.99.4</strong> </h2>
 
 <p>1.Download this package to your local directory, then start the R session, and change the working directory to where the "sidap_0.99.3.tar.gz" is, then
@@ -215,25 +247,9 @@ cytof_tsne_densvm_GUI()
 <li>When you open this file by double-clicking on it, you'll find XQuartz.pkg, double-click on it to run the installer, clicking through all the defaults.</li>
 <li>After the installer runs, you'll have to log out and back on to your Mac OS X account.</li>
 </ol>
-        </section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/SIgNBioinfo/SIDAP/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/SIgNBioinfo/SIDAP/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/SIgNBioinfo/SIDAP"></a> is maintained by <a href="https://github.com/SIgNBioinfo">SIgNBioinfo</a>.</p>
-
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
+      </section>
     </div>
 
-  
+    
   </body>
 </html>
